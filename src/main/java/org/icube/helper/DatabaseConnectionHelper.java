@@ -7,6 +7,16 @@ import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.icube.helper.DatabaseConnectionHelper;
 
 public class DatabaseConnectionHelper {
+	
+	static DatabaseConnectionHelper dch;
+
+	static public DatabaseConnectionHelper getDBHelper() {
+		if (dch == null) {
+			dch = new DatabaseConnectionHelper();
+		}
+		return dch;
+	}
+	
 	public DataSource masterDS;
 
 	private final static String MASTER_URL = UtilHelper
