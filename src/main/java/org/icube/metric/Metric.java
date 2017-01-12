@@ -1,98 +1,102 @@
 package org.icube.metric;
 
 public class Metric {
-	private String metric1Id;
-	private int metric1Name;
-	private String metric2Id;
-	private int metric2Name;
-	private String metric3Id;
-	private int metric3Name;
-	private String metric4Id;
-	private int metric4Name;
-	private String metric5Id;
-	private int metric5Name;
-	private String metric6Id;
-	private int metric6Name;
-	private int count;
+	private int metric_id_1;
+	private String metric_name_1;
+	private int metric_id_2;
+	private String metric_name_2;
+	private int metric_id_3;
+	private String metric_name_3;
+	private int metric_id_4;
+	private String metric_name_4;
+	private int metric_id_5;
+	private String metric_name_5;
+	private int metric_id_6;
+	private String metric_name_6;
+	private int candidate_count;
 	
-	public String getMetric1Id() {
-		return metric1Id;
-		
+	
+	public int getMetric_id_1() {
+		return metric_id_1;
 	}
-	public void setMetric1Id(String metric1Id) {
-		this.metric1Id = metric1Id;
+	public void setMetric_id_1(int metric_id_1) {
+		this.metric_id_1 = metric_id_1;
 	}
-	public int getMetric1Name() {
-		return metric1Name;
+	public String getMetric_name_1() {
+		return metric_name_1;
 	}
-	public void setMetric1Name(int metric1Name) {
-		this.metric1Name = metric1Name;
+	public void setMetric_name_1(String metric_name_1) {
+		this.metric_name_1 = metric_name_1;
 	}
-	public String getMetric2Id() {
-		return metric2Id;
+	public int getMetric_id_2() {
+		return metric_id_2;
 	}
-	public void setMetric2Id(String metric2Id) {
-		this.metric2Id = metric2Id;
+	public void setMetric_id_2(int metric_id_2) {
+		this.metric_id_2 = metric_id_2;
 	}
-	public int getMetric2Name() {
-		return metric2Name;
+	public String getMetric_name_2() {
+		return metric_name_2;
 	}
-	public void setMetric2Name(int metric2Name) {
-		this.metric2Name = metric2Name;
+	public void setMetric_name_2(String metric_name_2) {
+		this.metric_name_2 = metric_name_2;
 	}
-	public String getMetric3Id() {
-		return metric3Id;
+	public int getMetric_id_3() {
+		return metric_id_3;
 	}
-	public void setMetric3Id(String metric3Id) {
-		this.metric3Id = metric3Id;
+	public void setMetric_id_3(int metric_id_3) {
+		this.metric_id_3 = metric_id_3;
 	}
-	public int getMetric3Name() {
-		return metric3Name;
+	public String getMetric_name_3() {
+		return metric_name_3;
 	}
-	public void setMetric3Name(int metric3Name) {
-		this.metric3Name = metric3Name;
+	public void setMetric_name_3(String metric_name_3) {
+		this.metric_name_3 = metric_name_3;
 	}
-	public String getMetric4Id() {
-		return metric4Id;
+	public int getMetric_id_4() {
+		return metric_id_4;
 	}
-	public void setMetric4Id(String metric4Id) {
-		this.metric4Id = metric4Id;
+	public void setMetric_id_4(int metric_id_4) {
+		this.metric_id_4 = metric_id_4;
 	}
-	public int getMetric4Name() {
-		return metric4Name;
+	public String getMetric_name_4() {
+		return metric_name_4;
 	}
-	public void setMetric4Name(int metric4Name) {
-		this.metric4Name = metric4Name;
+	public void setMetric_name_4(String metric_name_4) {
+		this.metric_name_4 = metric_name_4;
 	}
-	public String getMetric5Id() {
-		return metric5Id;
+	public int getMetric_id_5() {
+		return metric_id_5;
 	}
-	public void setMetric5Id(String metric5Id) {
-		this.metric5Id = metric5Id;
+	public void setMetric_id_5(int metric_id_5) {
+		this.metric_id_5 = metric_id_5;
 	}
-	public int getMetric5Name() {
-		return metric5Name;
+	public String getMetric_name_5() {
+		return metric_name_5;
 	}
-	public void setMetric5Name(int metric5Name) {
-		this.metric5Name = metric5Name;
+	public void setMetric_name_5(String metric_name_5) {
+		this.metric_name_5 = metric_name_5;
 	}
-	public String getMetric6Id() {
-		return metric6Id;
+	public int getMetric_id_6() {
+		return metric_id_6;
 	}
-	public void setMetric6Id(String metric6Id) {
-		this.metric6Id = metric6Id;
+	public void setMetric_id_6(int metric_id_6) {
+		this.metric_id_6 = metric_id_6;
 	}
-	public int getMetric6Name() {
-		return metric6Name;
+	public String getMetric_name_6() {
+		return metric_name_6;
 	}
-	public void setMetric6Name(int metric6Name) {
-		this.metric6Name = metric6Name;
+	public void setMetric_name_6(String metric_name_6) {
+		this.metric_name_6 = metric_name_6;
 	}
-	public int getCount() {
-		return count;
+	public int getCandidate_count() {
+		return candidate_count;
 	}
-	public void setCount(int count) {
-		this.count = count;
+	public void setCandidate_count(int candidate_count) {
+		this.candidate_count = candidate_count;
 	}
-
+	
+	
+	
+	
+	
 }

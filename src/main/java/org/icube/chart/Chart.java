@@ -1,40 +1,42 @@
 package org.icube.chart;
 
 public class Chart {
-	private int chartId;
-	private String chartName;
-	private int metricId;
-	private String metricName;
-	private String chartTitle;
-	public int getChartId() {
-		return chartId;
+	private int chart_id;
+	private String chart_type;
+	private int metric_id;
+	private String metric;
+	private String chart_title;
+	
+	
+	public int getChart_id() {
+		return chart_id;
 	}
-	public void setChartId(int chartId) {
-		this.chartId = chartId;
+	public void setChart_id(int chart_id) {
+		this.chart_id = chart_id;
 	}
-	public String getChartName() {
-		return chartName;
+	public String getChart_type() {
+		return chart_type;
 	}
-	public void setChartName(String chartName) {
-		this.chartName = chartName;
+	public void setChart_type(String chart_type) {
+		this.chart_type = chart_type;
 	}
-	public int getMetricId() {
-		return metricId;
+	public int getMetric_id() {
+		return metric_id;
 	}
-	public void setMetricId(int metricId) {
-		this.metricId = metricId;
+	public void setMetric_id(int metric_id) {
+		this.metric_id = metric_id;
 	}
-	public String getMetricName() {
-		return metricName;
+	public String getMetric() {
+		return metric;
 	}
-	public void setMetricName(String metricName) {
-		this.metricName = metricName;
+	public void setMetric(String metric) {
+		this.metric = metric;
 	}
-	public String getChartTitle() {
-		return chartTitle;
+	public String getChart_title() {
+		return chart_title;
 	}
-	public void setChartTitle(String chartTitle) {
-		this.chartTitle = chartTitle;
+	public void setChart_title(String chart_title) {
+		this.chart_title = chart_title;
 	}
-
+	
 }
