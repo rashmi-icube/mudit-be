@@ -11,17 +11,17 @@ public class ChartHelperTest {
 	ChartHelper ch = new ChartHelper();
 	int pageId = 1;
 	
-//	@Test
-//	public void testGetChartMapping(){
-//		List<Chart> chartList = ch.getChartMapping(pageId);
-//		for(Chart c : chartList){
-//			System.out.println("ChartId : " + c.getChartId());
-//			System.out.println("Chart type :  " + c.getChartType());
-//			System.out.println("Metric Id :  " + c.getMetricId());
-//			System.out.println("Metric : " + c.getMetric());
-//			System.out.println("Chart Title : " + c.getChartTitle());
-//		}
-//	}
+	@Test
+	public void testGetChartMapping(){
+		List<Chart> chartList = ch.getChartMapping(pageId);
+		for(Chart c : chartList){
+			System.out.println("ChartId : " + c.getChartId());
+			System.out.println("Chart type :  " + c.getChartType());
+			System.out.println("Metric Id :  " + c.getMetricId());
+			System.out.println("Metric : " + c.getMetric());
+			System.out.println("Chart Title : " + c.getChartTitle());
+		}
+	}
 	
 	@Test
 	public void testGetChartDataForPage(){
