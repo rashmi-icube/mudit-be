@@ -1,42 +1,51 @@
 package org.icube.chart;
 
 public class Chart {
-	private int chart_id;
-	private String chart_type;
-	private int metric_id;
+
+	private int chartId;
+	private String chartType;
+	private int metricId;
 	private String metric;
-	private String chart_title;
-	
-	
-	public int getChart_id() {
-		return chart_id;
+	private String chartTitle;
+
+	public int getChartId() {
+		return chartId;
 	}
-	public void setChart_id(int chart_id) {
-		this.chart_id = chart_id;
+
+	public void setChartId(int chartId) {
+		this.chartId = chartId;
 	}
-	public String getChart_type() {
-		return chart_type;
+
+	public String getChartType() {
+		return chartType;
 	}
-	public void setChart_type(String chart_type) {
-		this.chart_type = chart_type;
+
+	public void setChartType(String chartType) {
+		this.chartType = chartType;
 	}
-	public int getMetric_id() {
-		return metric_id;
+
+	public int getMetricId() {
+		return metricId;
 	}
-	public void setMetric_id(int metric_id) {
-		this.metric_id = metric_id;
+
+	public void setMetricId(int metricId) {
+		this.metricId = metricId;
 	}
+
 	public String getMetric() {
 		return metric;
 	}
+
 	public void setMetric(String metric) {
 		this.metric = metric;
 	}
-	public String getChart_title() {
-		return chart_title;
+
+	public String getChartTitle() {
+		return chartTitle;
 	}
-	public void setChart_title(String chart_title) {
-		this.chart_title = chart_title;
+
+	public void setChartTitle(String chartTitle) {
+		this.chartTitle = chartTitle;
 	}
-	
+
 }
