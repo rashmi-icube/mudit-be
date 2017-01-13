@@ -2,12 +2,12 @@ package org.icube.chart;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.icube.helper.DatabaseConnectionHelper;
+import org.icube.helper.UtilHelper;
 import org.icube.metric.Metric;
 
 public class ChartHelper {
@@ -22,52 +22,28 @@ public class ChartHelper {
 		DatabaseConnectionHelper dch = DatabaseConnectionHelper.getDBHelper();
 		try (CallableStatement cstmt = dch.masterDS.getConnection().prepareCall("{call getChartDataForPage(?)}")) {
 			cstmt.setInt("pageid", pageId);
-			try (ResultSet rs = cstmt.executeQuery()) {
-				while (rs.next()) {
-
-					ResultSetMetaData rsmd = rs.getMetaData();
-					int columns = rsmd.getColumnCount();
-					Metric m = new Metric();
-					for (int x = 1; x <= columns; x++) {
-						// fill the chart details
-						m = setMetricDetails(rs, rsmd.getColumnName(x));
-					}
-
-					// add the chart object to the chart list
-					metricList.add(m);
-				}
-
+			ResultSet rs = cstmt.executeQuery();
+			while (rs.next()) {
+				Metric m = new Metric();
+				m.setMetricId1(UtilHelper.hasColumnForProcedure(rs, "metric_id_1") ? rs.getInt("metric_id_1") : 0);
+				m.setMetricName1(UtilHelper.hasColumnForProcedure(rs, "metric_name_1") ? rs.getString("metric_name_1") : "");
+				m.setMetricId2(UtilHelper.hasColumnForProcedure(rs, "metric_id_2") ? rs.getInt("metric_id_2") : 0);
+				m.setMetricName2(UtilHelper.hasColumnForProcedure(rs, "metric_name_2") ? rs.getString("metric_name_2") : "");
+				m.setMetricId3(UtilHelper.hasColumnForProcedure(rs, "metric_id_3") ? rs.getInt("metric_id_3") : 0);
+				m.setMetricName3(UtilHelper.hasColumnForProcedure(rs, "metric_name_3") ? rs.getString("metric_name_3") : "");
+				m.setMetricId4(UtilHelper.hasColumnForProcedure(rs, "metric_id_4") ? rs.getInt("metric_id_4") : 0);
+				m.setMetricName4(UtilHelper.hasColumnForProcedure(rs, "metric_name_4") ? rs.getString("metric_name_4") : "");
+				m.setMetricId5(UtilHelper.hasColumnForProcedure(rs, "metric_id_5") ? rs.getInt("metric_id_5") : 0);
+				m.setMetricName5(UtilHelper.hasColumnForProcedure(rs, "metric_name_5") ? rs.getString("metric_name_5") : "");
+				m.setMetricId6(UtilHelper.hasColumnForProcedure(rs, "metric_id_6") ? rs.getInt("metric_id_6") : 0);
+				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_6") ? rs.getString("metric_name_6") : "");
+				m.setCandidateCount(rs.getInt("candidate_count"));
+				metricList.add(m);
 			}
 		} catch (SQLException e) {
 			org.apache.log4j.Logger.getLogger(ChartHelper.class).error("Unable to retrieve the chart details for page number " + pageId, e);
 		}
 		return metricList;
-	}
-
-	private Metric setMetricDetails(ResultSet rs, String columnName) throws SQLException {
-		Metric m = new Metric();
-		switch (columnName) {
-		case "metric_id_1":
-			m.setMetricId1(rs.getInt("metric_id_1"));
-			break;
-		case "metric_id_2":
-			m.setMetricId2(rs.getInt("metric_id_2"));
-			break;
-		case "metric_id_3":
-			m.setMetricId3(rs.getInt("metric_id_3"));
-			break;
-		case "metric_id_4":
-			m.setMetricId4(rs.getInt("metric_id_4"));
-			break;
-		case "metric_id_5":
-			m.setMetricId5(rs.getInt("metric_id_5"));
-			break;
-		case "metric_id_6":
-			m.setMetricId6(rs.getInt("metric_id_6"));
-			break;
-		}
-
-		return m;
 	}
 
 	/**
