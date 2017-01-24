@@ -5,11 +5,26 @@ import java.util.List;
 import org.icube.chart.Chart;
 import org.icube.chart.ChartHelper;
 import org.icube.metric.Metric;
+import org.icube.question.Question;
 import org.junit.Test;
 
 public class ChartHelperTest {
 	ChartHelper ch = new ChartHelper();
 	int pageId = 1;
+	int tabId = 1;
+	
+	
+	@Test
+	public void testGetQuestionForTab(){
+		List<Question> questionList = ch.getQuestionForTab(tabId);
+		for(Question q : questionList){
+			System.out.println("PageId : " + q.getPageId());
+			System.out.println("TabId :  " + q.getTabId());
+			System.out.println("Question :  " + q.getQuestion());
+			
+		}
+	}
+	
 	
 	@Test
 	public void testGetChartMapping(){
@@ -20,7 +35,7 @@ public class ChartHelperTest {
 			System.out.println("Metric Id :  " + c.getMetricId());
 			System.out.println("Metric : " + c.getMetric());
 			System.out.println("Chart Title : " + c.getChartTitle());
-		}
+	}
 	}
 	
 	@Test

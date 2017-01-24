@@ -9,6 +9,7 @@ import java.util.List;
 import org.icube.helper.DatabaseConnectionHelper;
 import org.icube.helper.UtilHelper;
 import org.icube.metric.Metric;
+import org.icube.question.Question;
 
 public class ChartHelper {
 
@@ -78,6 +79,34 @@ public class ChartHelper {
 		c.setMetricId(rs.getInt("metric_id"));
 		c.setMetric(rs.getString("metric"));
 		return c;
+	}
+	
+	public List<Question> getQuestionForTab(int tabId){
+		List<Question> questionList = new ArrayList<>();
+		DatabaseConnectionHelper dch = DatabaseConnectionHelper.getDBHelper();
+		try (CallableStatement cstmt = dch.masterDS.getConnection().prepareCall("{call getPagesForTab(?)}")) {
+			cstmt.setInt("tabid", tabId);
+			try (ResultSet rs = cstmt.executeQuery()) {
+				while (rs.next()) {
+					// fill the question object & add the question object to the question list
+					questionList.add(setQuestionDetails(rs));
+				}
+
+			}
+		} catch (SQLException e) {
+			org.apache.log4j.Logger.getLogger(ChartHelper.class).error("Unable to retrieve the question details for tab number " + tabId, e);
+		}
+		return questionList;
+		
+		
+	}
+
+	private Question setQuestionDetails(ResultSet rs) throws SQLException {
+		Question q = new Question();
+		q.setPageId(rs.getInt("page_id"));
+		q.setTabId(rs.getInt("tab_id"));
+		q.setQuestion(rs.getString("question"));
+		return q;
 	}
 
 }
