@@ -54,6 +54,14 @@ public class ChartHelperTest {
 			System.out.println("MetricName5 : " + m.getMetricName5());
 			System.out.println("MetricId6 : " + m.getMetricId6());
 			System.out.println("MetricName6 : " + m.getMetricName6());
+			System.out.println("MetricId7 : " + m.getMetricId7());
+			System.out.println("MetricName7 : " + m.getMetricName7());
+			System.out.println("MetricId8 : " + m.getMetricId8());
+			System.out.println("MetricName8 : " + m.getMetricName8());
+			System.out.println("MetricId9 : " + m.getMetricId9());
+			System.out.println("MetricName9 : " + m.getMetricName9());
+			System.out.println("MetricId10 : " + m.getMetricId10());
+			System.out.println("MetricName10 : " + m.getMetricName10());
 			System.out.println("Candidate count : " + m.getCandidateCount());
 		}
 	}
