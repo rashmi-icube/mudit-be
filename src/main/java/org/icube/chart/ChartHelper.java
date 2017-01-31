@@ -38,14 +38,14 @@ public class ChartHelper {
 				m.setMetricName5(UtilHelper.hasColumnForProcedure(rs, "metric_name_5") ? rs.getString("metric_name_5") : "");
 				m.setMetricId6(UtilHelper.hasColumnForProcedure(rs, "metric_id_6") ? rs.getInt("metric_id_6") : 0);
 				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_6") ? rs.getString("metric_name_6") : "");
-				m.setMetricId6(UtilHelper.hasColumnForProcedure(rs, "metric_id_7") ? rs.getInt("metric_id_7") : 0);
-				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_7") ? rs.getString("metric_name_7") : "");
-				m.setMetricId6(UtilHelper.hasColumnForProcedure(rs, "metric_id_8") ? rs.getInt("metric_id_8") : 0);
-				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_8") ? rs.getString("metric_name_8") : "");
-				m.setMetricId6(UtilHelper.hasColumnForProcedure(rs, "metric_id_9") ? rs.getInt("metric_id_9") : 0);
-				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_9") ? rs.getString("metric_name_9") : "");
-				m.setMetricId6(UtilHelper.hasColumnForProcedure(rs, "metric_id_10") ? rs.getInt("metric_id_10") : 0);
-				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_10") ? rs.getString("metric_name_10") : "");
+				m.setMetricId7(UtilHelper.hasColumnForProcedure(rs, "metric_id_7") ? rs.getInt("metric_id_7") : 0);
+				m.setMetricName7(UtilHelper.hasColumnForProcedure(rs, "metric_name_7") ? rs.getString("metric_name_7") : "");
+				m.setMetricId8(UtilHelper.hasColumnForProcedure(rs, "metric_id_8") ? rs.getInt("metric_id_8") : 0);
+				m.setMetricName8(UtilHelper.hasColumnForProcedure(rs, "metric_name_8") ? rs.getString("metric_name_8") : "");
+				m.setMetricId9(UtilHelper.hasColumnForProcedure(rs, "metric_id_9") ? rs.getInt("metric_id_9") : 0);
+				m.setMetricName9(UtilHelper.hasColumnForProcedure(rs, "metric_name_9") ? rs.getString("metric_name_9") : "");
+				m.setMetricId10(UtilHelper.hasColumnForProcedure(rs, "metric_id_10") ? rs.getInt("metric_id_10") : 0);
+				m.setMetricName10(UtilHelper.hasColumnForProcedure(rs, "metric_name_10") ? rs.getString("metric_name_10") : "");
 				m.setCandidateCount(rs.getInt("candidate_count"));
 				metricList.add(m);
 			}
