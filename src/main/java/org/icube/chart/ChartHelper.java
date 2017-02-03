@@ -9,7 +9,6 @@ import java.util.List;
 import org.icube.helper.DatabaseConnectionHelper;
 import org.icube.helper.UtilHelper;
 import org.icube.metric.Metric;
-import org.icube.metric.TatMetric;
 import org.icube.question.Question;
 
 public class ChartHelper {
@@ -27,27 +26,18 @@ public class ChartHelper {
 			ResultSet rs = cstmt.executeQuery();
 			while (rs.next()) {
 				Metric m = new Metric();
-				m.setMetricId1(UtilHelper.hasColumnForProcedure(rs, "metric_id_1") ? rs.getInt("metric_id_1") : 0);
 				m.setMetricName1(UtilHelper.hasColumnForProcedure(rs, "metric_name_1") ? rs.getString("metric_name_1") : "");
-				m.setMetricId2(UtilHelper.hasColumnForProcedure(rs, "metric_id_2") ? rs.getInt("metric_id_2") : 0);
 				m.setMetricName2(UtilHelper.hasColumnForProcedure(rs, "metric_name_2") ? rs.getString("metric_name_2") : "");
-				m.setMetricId3(UtilHelper.hasColumnForProcedure(rs, "metric_id_3") ? rs.getInt("metric_id_3") : 0);
 				m.setMetricName3(UtilHelper.hasColumnForProcedure(rs, "metric_name_3") ? rs.getString("metric_name_3") : "");
-				m.setMetricId4(UtilHelper.hasColumnForProcedure(rs, "metric_id_4") ? rs.getInt("metric_id_4") : 0);
 				m.setMetricName4(UtilHelper.hasColumnForProcedure(rs, "metric_name_4") ? rs.getString("metric_name_4") : "");
-				m.setMetricId5(UtilHelper.hasColumnForProcedure(rs, "metric_id_5") ? rs.getInt("metric_id_5") : 0);
 				m.setMetricName5(UtilHelper.hasColumnForProcedure(rs, "metric_name_5") ? rs.getString("metric_name_5") : "");
-				m.setMetricId6(UtilHelper.hasColumnForProcedure(rs, "metric_id_6") ? rs.getInt("metric_id_6") : 0);
 				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_6") ? rs.getString("metric_name_6") : "");
-				m.setMetricId7(UtilHelper.hasColumnForProcedure(rs, "metric_id_7") ? rs.getInt("metric_id_7") : 0);
 				m.setMetricName7(UtilHelper.hasColumnForProcedure(rs, "metric_name_7") ? rs.getString("metric_name_7") : "");
-				m.setMetricId8(UtilHelper.hasColumnForProcedure(rs, "metric_id_8") ? rs.getInt("metric_id_8") : 0);
 				m.setMetricName8(UtilHelper.hasColumnForProcedure(rs, "metric_name_8") ? rs.getString("metric_name_8") : "");
-				m.setMetricId9(UtilHelper.hasColumnForProcedure(rs, "metric_id_9") ? rs.getInt("metric_id_9") : 0);
 				m.setMetricName9(UtilHelper.hasColumnForProcedure(rs, "metric_name_9") ? rs.getString("metric_name_9") : "");
-				m.setMetricId10(UtilHelper.hasColumnForProcedure(rs, "metric_id_10") ? rs.getInt("metric_id_10") : 0);
 				m.setMetricName10(UtilHelper.hasColumnForProcedure(rs, "metric_name_10") ? rs.getString("metric_name_10") : "");
-				m.setCandidateCount(rs.getInt("candidate_count"));
+				m.setType(UtilHelper.hasColumnForProcedure(rs, "type") ? rs.getString("type") : "");
+				m.setValue(rs.getInt("value"));
 				metricList.add(m);
 			}
 		} catch (SQLException e) {
@@ -118,7 +108,7 @@ public class ChartHelper {
 		return q;
 	}
 	
-	public List<TatMetric> getChartDataForTat() {
+/*	public List<TatMetric> getChartDataForTat() {
 		List<TatMetric> metricList = new ArrayList<>();
 		DatabaseConnectionHelper dch = DatabaseConnectionHelper.getDBHelper();
 		try (CallableStatement cstmt = dch.masterDS.getConnection().prepareCall("{call getChartDataForTat()}")) {
@@ -162,6 +152,6 @@ public class ChartHelper {
 			org.apache.log4j.Logger.getLogger(ChartHelper.class).error("Unable to retrieve the chart details for TAT" , e);
 		}
 		return metricList;
-	}
+	}*/
 
 }
