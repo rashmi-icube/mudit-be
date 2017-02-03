@@ -9,6 +9,7 @@ import java.util.List;
 import org.icube.helper.DatabaseConnectionHelper;
 import org.icube.helper.UtilHelper;
 import org.icube.metric.Metric;
+import org.icube.metric.TatMetric;
 import org.icube.question.Question;
 
 public class ChartHelper {
@@ -113,8 +114,54 @@ public class ChartHelper {
 		Question q = new Question();
 		q.setPageId(rs.getInt("page_id"));
 		q.setTabId(rs.getInt("tab_id"));
-		q.setQuestion(rs.getString("question"));
+		q.setQuestionText(rs.getString("question"));
 		return q;
+	}
+	
+	public List<TatMetric> getChartDataForTat() {
+		List<TatMetric> metricList = new ArrayList<>();
+		DatabaseConnectionHelper dch = DatabaseConnectionHelper.getDBHelper();
+		try (CallableStatement cstmt = dch.masterDS.getConnection().prepareCall("{call getChartDataForTat()}")) {
+			ResultSet rs = cstmt.executeQuery();
+			while (rs.next()) {
+				TatMetric m = new TatMetric();
+				m.setMetricName1(UtilHelper.hasColumnForProcedure(rs, "metric_name_1") ? rs.getString("metric_name_1") : "");
+				m.setMetricName2(UtilHelper.hasColumnForProcedure(rs, "metric_name_2") ? rs.getString("metric_name_2") : "");
+				m.setMetricName3(UtilHelper.hasColumnForProcedure(rs, "metric_name_3") ? rs.getString("metric_name_3") : "");
+				m.setMetricName4(UtilHelper.hasColumnForProcedure(rs, "metric_name_4") ? rs.getString("metric_name_4") : "");
+				m.setMetricName5(UtilHelper.hasColumnForProcedure(rs, "metric_name_5") ? rs.getString("metric_name_5") : "");
+				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_6") ? rs.getString("metric_name_6") : "");
+				m.setType(UtilHelper.hasColumnForProcedure(rs, "type") ? rs.getString("type") : "");
+				m.setValue(UtilHelper.hasColumnForProcedure(rs, "value") ? rs.getDouble("value") : 0);
+				metricList.add(m);
+			}
+		} catch (SQLException e) {
+			org.apache.log4j.Logger.getLogger(ChartHelper.class).error("Unable to retrieve the chart details for TAT" , e);
+		}
+		return metricList;
+	}
+	
+	public List<TatMetric> getChartDataForSourceOfHire() {
+		List<TatMetric> metricList = new ArrayList<>();
+		DatabaseConnectionHelper dch = DatabaseConnectionHelper.getDBHelper();
+		try (CallableStatement cstmt = dch.masterDS.getConnection().prepareCall("{call getChartDataForSourceOfHire()}")) {
+			ResultSet rs = cstmt.executeQuery();
+			while (rs.next()) {
+				TatMetric m = new TatMetric();
+				m.setMetricName1(UtilHelper.hasColumnForProcedure(rs, "metric_name_1") ? rs.getString("metric_name_1") : "");
+				m.setMetricName2(UtilHelper.hasColumnForProcedure(rs, "metric_name_2") ? rs.getString("metric_name_2") : "");
+				m.setMetricName3(UtilHelper.hasColumnForProcedure(rs, "metric_name_3") ? rs.getString("metric_name_3") : "");
+				m.setMetricName4(UtilHelper.hasColumnForProcedure(rs, "metric_name_4") ? rs.getString("metric_name_4") : "");
+				m.setMetricName5(UtilHelper.hasColumnForProcedure(rs, "metric_name_5") ? rs.getString("metric_name_5") : "");
+				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_6") ? rs.getString("metric_name_6") : "");
+				m.setType(UtilHelper.hasColumnForProcedure(rs, "type") ? rs.getString("type") : "");
+				m.setValue(UtilHelper.hasColumnForProcedure(rs, "value") ? rs.getDouble("value") : 0);
+				metricList.add(m);
+			}
+		} catch (SQLException e) {
+			org.apache.log4j.Logger.getLogger(ChartHelper.class).error("Unable to retrieve the chart details for TAT" , e);
+		}
+		return metricList;
 	}
 
 }

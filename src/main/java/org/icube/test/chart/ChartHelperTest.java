@@ -20,7 +20,7 @@ public class ChartHelperTest {
 		for(Question q : questionList){
 			System.out.println("PageId : " + q.getPageId());
 			System.out.println("TabId :  " + q.getTabId());
-			System.out.println("Question :  " + q.getQuestion());
+			System.out.println("Question :  " + q.getQuestionText());
 			
 		}
 	}

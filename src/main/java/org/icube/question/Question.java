@@ -4,7 +4,7 @@ public class Question {
 	
 	private int pageId;
 	private int tabId;
-	private String question;
+	private String questionText;
 	
 	
 	public int getPageId() {
@@ -19,12 +19,13 @@ public class Question {
 	public void setTabId(int tabId) {
 		this.tabId = tabId;
 	}
-	public String getQuestion() {
-		return question;
+	public String getQuestionText() {
+		return questionText;
 	}
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setQuestionText(String questionText) {
+		this.questionText = questionText;
 	}
+	
 	
 
 }
