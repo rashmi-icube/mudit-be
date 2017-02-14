@@ -14,50 +14,47 @@ public class ChartHelperTest {
 	ChartHelper ch = new ChartHelper();
 	int pageId = 1;
 	int tabId = 1;
-	
-	
+
 	@Test
-	public void testGetQuestionForTab(){
+	public void testGetQuestionForTab() {
 		List<Question> questionList = ch.getQuestionForTab(tabId);
-		for(Question q : questionList){
+		for (Question q : questionList) {
 			assertNotNull("PageId : " + q.getPageId());
 			assertNotNull("TabId :  " + q.getTabId());
 			assertNotNull("Question :  " + q.getQuestionText());
-			
+
 		}
 	}
-	
-	
+
 	@Test
-	public void testGetChartMapping(){
+	public void testGetChartMapping() {
 		List<Chart> chartList = ch.getChartMapping(pageId);
-		for(Chart c : chartList){
+		for (Chart c : chartList) {
 			assertNotNull("ChartId : " + c.getChartId());
 			assertNotNull("Chart type :  " + c.getChartType());
 			assertNotNull("Metric Id :  " + c.getMetricId());
 			assertNotNull("Metric : " + c.getMetric());
 			assertNotNull("Chart Title : " + c.getChartTitle());
+		}
 	}
-	}
-	
+
 	@Test
-	public void testGetChartDataForPage(){
+	public void testGetChartDataForPage() {
 		List<Metric> metricList = ch.getChartDataForPage(pageId);
-		for(Metric m : metricList){
-			assertNotNull("MetricName1 : " + m.getMetricName1());
-			assertNotNull("MetricName2 : " + m.getMetricName2());
-			assertNotNull("MetricName3 : " + m.getMetricName3());
-			assertNotNull("MetricName4 : " + m.getMetricName4());
-			assertNotNull("MetricName5 : " + m.getMetricName5());
-			assertNotNull("MetricName6 : " + m.getMetricName6());
-			assertNotNull("MetricName7 : " + m.getMetricName7());
-			assertNotNull("MetricName8 : " + m.getMetricName8());
-			assertNotNull("MetricName9 : " + m.getMetricName9());
-			assertNotNull("MetricName10 : " + m.getMetricName10());
+		for (Metric m : metricList) {
+			assertNotNull("M1 : " + m.getM1());
+			assertNotNull("M2 : " + m.getM2());
+			assertNotNull("M3 : " + m.getM3());
+			assertNotNull("M4 : " + m.getM4());
+			assertNotNull("M5 : " + m.getM5());
+			assertNotNull("M6 : " + m.getM6());
+			assertNotNull("M7 : " + m.getM7());
+			assertNotNull("M8 : " + m.getM8());
+			assertNotNull("M9 : " + m.getM9());
+			assertNotNull("M10 : " + m.getM10());
 			assertNotNull("Value : " + m.getValue());
 			assertNotNull("Type : " + m.getType());
 		}
 	}
-	
 
 }

@@ -29,16 +29,16 @@ public class ChartHelper {
 			ResultSet rs = cstmt.executeQuery();
 			while (rs.next()) {
 				Metric m = new Metric();
-				m.setMetricName1(UtilHelper.hasColumnForProcedure(rs, "metric_name_1") ? rs.getString("metric_name_1") : "");
-				m.setMetricName2(UtilHelper.hasColumnForProcedure(rs, "metric_name_2") ? rs.getString("metric_name_2") : "");
-				m.setMetricName3(UtilHelper.hasColumnForProcedure(rs, "metric_name_3") ? rs.getString("metric_name_3") : "");
-				m.setMetricName4(UtilHelper.hasColumnForProcedure(rs, "metric_name_4") ? rs.getString("metric_name_4") : "");
-				m.setMetricName5(UtilHelper.hasColumnForProcedure(rs, "metric_name_5") ? rs.getString("metric_name_5") : "");
-				m.setMetricName6(UtilHelper.hasColumnForProcedure(rs, "metric_name_6") ? rs.getString("metric_name_6") : "");
-				m.setMetricName7(UtilHelper.hasColumnForProcedure(rs, "metric_name_7") ? rs.getString("metric_name_7") : "");
-				m.setMetricName8(UtilHelper.hasColumnForProcedure(rs, "metric_name_8") ? rs.getString("metric_name_8") : "");
-				m.setMetricName9(UtilHelper.hasColumnForProcedure(rs, "metric_name_9") ? rs.getString("metric_name_9") : "");
-				m.setMetricName10(UtilHelper.hasColumnForProcedure(rs, "metric_name_10") ? rs.getString("metric_name_10") : "");
+				m.setM1(UtilHelper.hasColumnForProcedure(rs, "metric_name_1") ? rs.getString("metric_name_1") : "");
+				m.setM2(UtilHelper.hasColumnForProcedure(rs, "metric_name_2") ? rs.getString("metric_name_2") : "");
+				m.setM3(UtilHelper.hasColumnForProcedure(rs, "metric_name_3") ? rs.getString("metric_name_3") : "");
+				m.setM4(UtilHelper.hasColumnForProcedure(rs, "metric_name_4") ? rs.getString("metric_name_4") : "");
+				m.setM5(UtilHelper.hasColumnForProcedure(rs, "metric_name_5") ? rs.getString("metric_name_5") : "");
+				m.setM6(UtilHelper.hasColumnForProcedure(rs, "metric_name_6") ? rs.getString("metric_name_6") : "");
+				m.setM7(UtilHelper.hasColumnForProcedure(rs, "metric_name_7") ? rs.getString("metric_name_7") : "");
+				m.setM8(UtilHelper.hasColumnForProcedure(rs, "metric_name_8") ? rs.getString("metric_name_8") : "");
+				m.setM9(UtilHelper.hasColumnForProcedure(rs, "metric_name_9") ? rs.getString("metric_name_9") : "");
+				m.setM10(UtilHelper.hasColumnForProcedure(rs, "metric_name_10") ? rs.getString("metric_name_10") : "");
 				m.setType(UtilHelper.hasColumnForProcedure(rs, "type") ? rs.getString("type") : "");
 				m.setValue(rs.getInt("value"));
 				metricList.add(m);
